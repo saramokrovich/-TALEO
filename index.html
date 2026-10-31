@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+  <title>TALEO · BrizanMAG</title>
+  <meta name="description" content="TALEO — эксклюзивный дистрибьютор фильтрующей загрузки BrizanMAG. Станьте дилером в своей стране." />
+  <meta name="theme-color" content="#050b2c" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+  <div class="glow glow-a"></div>
+  <div class="glow glow-b"></div>
+
+  <header class="topbar">
+    <div class="topbar-line"></div>
+    <div class="topbar-row">
+      <div class="dots"><span></span><span></span><span></span></div>
+      <a class="brand" href="#home" data-go="home">
+        <img src="assets/taleo-icon.png" alt="" />
+        <span>TALEO</span>
+      </a>
+      <button class="lang" id="langBtn" type="button">EN</button>
+    </div>
+  </header>
+
+  <main id="app">
+    <!-- HOME -->
+    <section class="page active" id="page-home">
+      <div class="hero">
+        <div class="hero-logo"><img src="assets/taleo-icon.png" alt="TALEO" /></div>
+        <p class="eyebrow" data-i18n="heroEyebrow"></p>
+        <h1 class="framed">BrizanMAG</h1>
+        <p class="lead" data-i18n="heroLead"></p>
+        <div class="cta-row">
+          <button class="btn btn-primary" data-go="dealer" data-i18n="ctaDealer"></button>
+          <button class="btn btn-ghost" data-go="product" data-i18n="ctaProduct"></button>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><b>01</b><strong>35%</strong><span data-i18n="stat1"></span></div>
+        <div class="stat"><b>02</b><strong>20+</strong><span data-i18n="stat2"></span></div>
+        <div class="stat"><b>03</b><strong>7</strong><span data-i18n="stat3"></span></div>
+        <div class="stat"><b>04</b><strong>0</strong><span data-i18n="stat4"></span></div>
+      </div>
+
+      <h2 class="section-title" data-i18n="aboutTitle"></h2>
+      <div class="bar"></div>
+      <p class="text" data-i18n="aboutText"></p>
+
+      <h2 class="section-title" data-i18n="casesTitle"></h2>
+      <div class="bar"></div>
+      <div class="cards" id="cases"></div>
+
+      <a class="site-link" id="siteLink" href="https://www.taleo.pro" target="_blank" rel="noopener">
+        <span data-i18n="visitSite"></span>
+        <strong>www.taleo.pro</strong>
+        <i>↗</i>
+      </a>
+    </section>
+
+    <!-- PRODUCT -->
+    <section class="page" id="page-product">
+      <p class="eyebrow" data-i18n="productEyebrow"></p>
+      <h1 class="h1" data-i18n="productTitle"></h1>
+      <div class="bar"></div>
+      <p class="text" data-i18n="productText"></p>
+
+      <h2 class="section-title" data-i18n="appsTitle"></h2>
+      <div class="services" id="apps"></div>
+
+      <h2 class="section-title" data-i18n="benefitsTitle"></h2>
+      <ul class="checks" id="benefits"></ul>
+
+      <h2 class="section-title" data-i18n="specsTitle"></h2>
+      <div class="specs" id="specs"></div>
+
+      <h2 class="section-title" data-i18n="opsTitle"></h2>
+      <div class="specs" id="ops"></div>
+
+      <button class="btn btn-primary wide" data-go="dealer" data-i18n="ctaDealer"></button>
+    </section>
+
+    <!-- DEALER -->
+    <section class="page" id="page-dealer">
+      <p class="eyebrow" data-i18n="dealerEyebrow"></p>
+      <h1 class="h1" data-i18n="dealerTitle"></h1>
+      <div class="bar"></div>
+      <p class="text" data-i18n="dealerText"></p>
+
+      <div class="services three" id="perks"></div>
+
+      <form id="dealerForm" class="form" novalidate>
+        <label><span data-i18n="fCompany"></span><input name="company" required autocomplete="organization" /></label>
+        <label><span data-i18n="fCountry"></span><input name="country" required autocomplete="country-name" /></label>
+        <label><span data-i18n="fName"></span><input name="name" required autocomplete="name" /></label>
+        <label><span data-i18n="fEmail"></span><input name="email" type="email" required autocomplete="email" /></label>
+        <label><span data-i18n="fPhone"></span><input name="phone" type="tel" autocomplete="tel" /></label>
+        <label><span data-i18n="fRights"></span>
+          <select name="rights">
+            <option value="exclusive" data-i18n="rExclusive"></option>
+            <option value="non-exclusive" data-i18n="rNonExclusive"></option>
+            <option value="unsure" data-i18n="rUnsure"></option>
+          </select>
+        </label>
+        <label><span data-i18n="fMessage"></span><textarea name="message" rows="4" data-i18n-ph="fMessagePh"></textarea></label>
+        <p class="form-error" id="formError" hidden></p>
+        <button class="btn btn-primary wide" type="submit" id="submitBtn" data-i18n="submit"></button>
+        <p class="hint" data-i18n="submitHint"></p>
+      </form>
+
+      <div class="success" id="success" hidden>
+        <div class="success-icon">✓</div>
+        <h2 data-i18n="successTitle"></h2>
+        <p data-i18n="successText"></p>
+        <div class="cta-row">
+          <button class="btn btn-ghost" type="button" id="copyBtn" data-i18n="copy"></button>
+          <a class="btn btn-ghost" id="mailBtn" href="#" data-i18n="sendEmail"></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <nav class="tabbar">
+    <button data-go="home" class="active"><i>◎</i><span data-i18n="tabHome"></span></button>
+    <button data-go="product"><i>◇</i><span data-i18n="tabProduct"></span></button>
+    <button data-go="dealer"><i>✦</i><span data-i18n="tabDealer"></span></button>
+  </nav>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
