@@ -11,7 +11,7 @@ window.TALEO_CONFIG = {
   telegramUsername: "",
 
   // 2) E-mail для заявок (используется всегда как запасной вариант).
-  email: "info@taleo-water.com",
+  email: "bakurova@taleo.pro",
 
   // Язык по умолчанию: "auto" (по языку Telegram), "ru" или "en"
   defaultLang: "auto"
